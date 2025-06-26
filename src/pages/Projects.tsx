@@ -1,5 +1,5 @@
 // Projects.tsx - Professional Projects Page with TailwindCSS (Theme: Dark Futuristic)
-import React from 'react';
+// import React from 'react';
 
 const Projects = () => {
   const projects = [

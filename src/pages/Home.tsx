@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaDownload, FaEnvelope, FaPhone, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 
 const Home = () => {
   return (
