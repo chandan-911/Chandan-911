@@ -1,15 +1,4 @@
-# 💼 Chandan Maurya – Developer Portfolio
-
-Welcome to my personal portfolio web app — a curated showcase of my skills, experience, and passion for software engineering, machine learning, and impactful digital solutions.
-
----
-
-## 🌐 Live Website
-
-[🔗 Visit Portfolio](https://your-deployed-link.com)  
-📱 Fully responsive | 🌙 Glassmorphism UI | 🚀 Deployed with Vite + TypeScript + Tailwind CSS
-
----
+# 💼 Chandan
 
 ## 👨‍💻 About Me
 
