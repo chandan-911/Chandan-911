@@ -1,6 +1,14 @@
-// Navbar.tsx - Mobile Responsive Glassmorphic Navigation Bar
+// Navbar.tsx — Gradient Glassmorphic Navigation Bar
 import { useState } from 'react';
-import { FaHome, FaCode, FaGraduationCap, FaProjectDiagram, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import {
+  FaHome,
+  FaCode,
+  FaGraduationCap,
+  FaProjectDiagram,
+  FaGithub,
+  FaBars,
+  FaTimes,
+} from 'react-icons/fa';
 
 const Navbar = () => {
   const [active, setActive] = useState('/Home');
@@ -11,24 +19,25 @@ const Navbar = () => {
     { href: '/projects', icon: <FaProjectDiagram />, label: 'Projects' },
     { href: '/education', icon: <FaGraduationCap />, label: 'Education' },
     { href: '/coding', icon: <FaCode />, label: 'Coding' },
-    { href: '/github', icon: <FaGithub />, label: 'GitHub' }
+    { href: '/github', icon: <FaGithub />, label: 'GitHub' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-lg border-b border-white/10 shadow-xl">
+    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#0d0d0d] to-[#1e293b] backdrop-blur-lg border-b border-white/10 shadow-xl">
       <nav className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
-        <div className="text-2xl font-bold text-white tracking-widest">Chandan</div>
+        <div className="text-2xl font-extrabold text-blue-400 tracking-widest">Chandan</div>
 
+        {/* Desktop Nav */}
         <ul className="hidden md:flex gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 onClick={() => setActive(link.href)}
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full transition duration-300 ${
+                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border border-white/10 transition duration-300 ${
                   active === link.href
-                    ? 'bg-blue-600 text-white shadow-md'
-                    : 'text-gray-300 hover:text-white hover:bg-white/20'
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'text-slate-300 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 <span className="text-lg">{link.icon}</span>
@@ -38,7 +47,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile Toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -49,9 +58,9 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <ul className="md:hidden bg-[#1a1a1a] border-t border-white/10 px-6 py-4 space-y-4 shadow-xl">
+        <ul className="md:hidden bg-[#0f172a] px-6 py-4 space-y-4 border-t border-white/10 shadow-xl backdrop-blur-md">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -62,7 +71,7 @@ const Navbar = () => {
                 }}
                 className={`flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
                   active === link.href
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-white shadow'
                     : 'text-gray-300 hover:bg-white/10 hover:text-white'
                 }`}
               >
