@@ -1,6 +1,3 @@
-// Projects.tsx - Professional Projects Page with TailwindCSS (Theme: Dark Futuristic)
-// import React from 'react';
-
 const Projects = () => {
   const projects = [
     {
@@ -35,34 +32,46 @@ const Projects = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-[#0d0d0d] text-white px-6 py-28" id="projects">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">🚀 My Projects</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+    <section
+      id="projects"
+      className="min-h-screen bg-[#0d0d0d] text-white px-6 py-28 relative overflow-hidden"
+    >
+      {/* Background Visuals */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-tr from-purple-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center text-purple-400 drop-shadow mb-12">
+          🚀 My Projects
+        </h2>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((proj, index) => (
             <div
               key={index}
-              className="bg-[#1a1a1a] p-6 rounded-xl shadow-lg border border-white/10 hover:shadow-xl transition"
+              className="bg-gradient-to-br from-[#1f1f1f]/70 to-[#111]/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-purple-500/30 transition-all"
             >
-              <h3 className="text-2xl font-semibold mb-2 text-purple-300">{proj.title}</h3>
+              <h3 className="text-xl font-semibold mb-2 text-blue-400">{proj.title}</h3>
               <p className="text-gray-400 mb-4 text-sm">{proj.description}</p>
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {proj.tech.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-xs bg-gray-800 border border-gray-700 rounded-full"
+                    className="px-3 py-1 text-xs bg-[#121212] text-slate-300 border border-gray-700 rounded-full"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4">
+
+              <div className="flex gap-4 text-sm font-medium">
                 {proj.link && (
                   <a
                     href={proj.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm text-blue-400 hover:underline"
+                    className="text-blue-400 hover:underline"
                   >
                     🌐 Live Demo
                   </a>
@@ -72,7 +81,7 @@ const Projects = () => {
                     href={proj.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm text-green-400 hover:underline"
+                    className="text-green-400 hover:underline"
                   >
                     📂 GitHub
                   </a>

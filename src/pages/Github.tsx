@@ -32,9 +32,18 @@ const Github = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-[#0d0d0d] text-white px-6 py-28" id="github">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">🐙 GitHub Repositories</h2>
+    <section
+      id="github"
+      className="min-h-screen bg-[#0d0d0d] text-white px-6 py-28 relative overflow-hidden"
+    >
+      {/* Background Glows */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-pink-700 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-cyan-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12 text-blue-400 drop-shadow">
+          🐙 GitHub Repositories
+        </h2>
 
         {loading ? (
           <p className="text-center text-gray-400">Loading repositories...</p>
@@ -45,14 +54,16 @@ const Github = () => {
         ) : repos.length === 0 ? (
           <p className="text-center text-gray-400">No public repositories found.</p>
         ) : (
-          <div className="grid md:grid-cols-2 gap-8">
-            {repos.slice(0, 10).map((repo) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {repos.slice(0, 9).map((repo) => (
               <div
                 key={repo.id}
-                className="bg-[#1a1a1a] p-6 rounded-xl border border-white/10 shadow hover:shadow-lg transition"
+                className="bg-gradient-to-br from-[#1a1a1a]/70 to-[#0f0f0f]/50 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-blue-600/30 transition-all"
               >
-                <h3 className="text-xl font-semibold text-blue-300">{repo.name}</h3>
-                <p className="text-sm text-gray-400 mt-2 mb-3">
+                <h3 className="text-xl font-semibold text-cyan-400 mb-2">
+                  {repo.name}
+                </h3>
+                <p className="text-sm text-gray-400 mb-3">
                   {repo.description || 'No description provided.'}
                 </p>
                 <a

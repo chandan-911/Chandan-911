@@ -7,16 +7,19 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        glow: 'pulse 2s infinite',
+        glow: 'pulse 2s infinite', // Custom pulse glow effect
       },
       blur: {
-        '3xl': '64px',
+        '3xl': '64px', // Deep blur used in glassmorphic backgrounds
+      },
+      colors: {
+        dark: '#0d0d0d', // Optional: named color for dark base
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),     // For prose content
+    require('@tailwindcss/forms'),          // For beautiful form elements
+    require('@tailwindcss/aspect-ratio'),   // For responsive media
   ],
 };

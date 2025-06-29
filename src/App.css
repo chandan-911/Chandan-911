@@ -1,23 +1,31 @@
+/* index.css */
+
+/* Use Tailwind utility classes for most styling */
+/* Keep minimal base styles here for layout or fallback */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
+/* Optional logo hover glow (if using animated logo) */
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 1.5em #38bdf8aa); /* cyan glow */
 }
 
+.logo.react:hover {
+  filter: drop-shadow(0 0 1.5em #61dafbaa);
+}
+
+/* Optional animation if logo is spinning */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -28,15 +36,21 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo.spin {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Optional card or utility section */
 .card {
   padding: 2em;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Basic utility text */
 .read-the-docs {
   color: #888;
+  font-size: 0.9rem;
 }

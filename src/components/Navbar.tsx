@@ -23,42 +23,42 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#0d0d0d] to-[#1e293b] backdrop-blur-lg border-b border-white/10 shadow-xl">
+    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#0d0d0d] to-[#1e293b] backdrop-blur-md border-b border-white/10 shadow-md">
       <nav className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
-        <div className="text-2xl font-extrabold text-blue-400 tracking-widest">Chandan</div>
+        <div className="text-2xl font-bold text-cyan-400 tracking-widest drop-shadow-md">Chandan</div>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <ul className="hidden md:flex gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
                 onClick={() => setActive(link.href)}
-                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border border-white/10 transition duration-300 ${
+                className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full border border-white/10 backdrop-blur-md transition duration-300 ${
                   active === link.href
                     ? 'bg-blue-600 text-white shadow-lg'
                     : 'text-slate-300 hover:bg-white/10 hover:text-white'
                 }`}
               >
-                <span className="text-lg">{link.icon}</span>
+                <span className="text-base">{link.icon}</span>
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Hamburger Toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white text-2xl focus:outline-none"
+            className="text-white text-2xl focus:outline-none transition transform hover:scale-110"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <ul className="md:hidden bg-[#0f172a] px-6 py-4 space-y-4 border-t border-white/10 shadow-xl backdrop-blur-md">
           {navLinks.map((link) => (
@@ -69,9 +69,9 @@ const Navbar = () => {
                   setActive(link.href);
                   setIsOpen(false);
                 }}
-                className={`flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                className={`flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium transition duration-200 ${
                   active === link.href
-                    ? 'bg-blue-600 text-white shadow'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'text-gray-300 hover:bg-white/10 hover:text-white'
                 }`}
               >
