@@ -56,7 +56,7 @@ const Home = () => {
             <FaLinkedin /> LinkedIn
           </a>
           <a
-            href="/src/assets/Chandan's Resume.pdf"
+            href="/Chandan-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-emerald-400 transition"
@@ -64,7 +64,7 @@ const Home = () => {
             <FaDownload /> View Resume
           </a>
           <a
-            href="/src/assets/Chandan's Resume.pdf"
+            href="/Chandan-Resume.pdf"
             download
             className="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-indigo-400 transition"
           >
