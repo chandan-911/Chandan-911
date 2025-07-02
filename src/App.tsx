@@ -6,17 +6,19 @@ import Education from './pages/Education';
 import Coding from './pages/Coding';
 import Github from './pages/Github';
 import Navbar from './components/Navbar';
-import Footer from './components/footer'; // ✅ Capitalized filename for consistency
+import Footer from './components/footer'; // ✅ Capitalized for consistency
 
 function App() {
   return (
     <Router>
+      {/* Navbar always visible */}
       <Navbar />
 
+      {/* Main content area */}
       <main className="pt-16 bg-[#0d0d0d] min-h-screen text-white">
         <Routes>
-          <Route path="/" element={<Home />} />           {/* 🏠 Default route */}
-          <Route path="/home" element={<Home />} />       {/* 🔁 Optional alias */}
+          <Route path="/" element={<Home />} />           {/* 🏠 Default */}
+          <Route path="/home" element={<Home />} />       {/* 🏠 Alias */}
           <Route path="/projects" element={<Projects />} />
           <Route path="/education" element={<Education />} />
           <Route path="/coding" element={<Coding />} />
@@ -24,6 +26,7 @@ function App() {
         </Routes>
       </main>
 
+      {/* Footer always visible */}
       <Footer />
     </Router>
   );

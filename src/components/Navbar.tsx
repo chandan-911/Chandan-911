@@ -1,4 +1,3 @@
-// Navbar.tsx — Gradient Glassmorphic Navigation Bar
 import { useState } from 'react';
 import {
   FaHome,
@@ -23,11 +22,16 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#0d0d0d] to-[#1e293b] backdrop-blur-md border-b border-white/10 shadow-md">
+    <header
+      className="fixed top-0 left-0 w-full z-50 bg-gradient-to-br from-[#0f172a] via-[#0d0d0d] to-[#1e293b] backdrop-blur-md border-b border-white/10 shadow-md"
+      aria-label="Main Navigation"
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-16 flex items-center justify-between">
-        <div className="text-2xl font-bold text-cyan-400 tracking-widest drop-shadow-md">Chandan</div>
+        <div className="text-2xl font-bold text-cyan-400 tracking-widest drop-shadow-md">
+          Chandan
+        </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Nav */}
         <ul className="hidden md:flex gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
@@ -47,18 +51,19 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Hamburger Toggle */}
+        {/* Hamburger Toggle */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white text-2xl focus:outline-none transition transform hover:scale-110"
+            aria-label="Toggle Navigation"
           >
             {isOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
         <ul className="md:hidden bg-[#0f172a] px-6 py-4 space-y-4 border-t border-white/10 shadow-xl backdrop-blur-md">
           {navLinks.map((link) => (

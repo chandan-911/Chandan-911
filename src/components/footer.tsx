@@ -1,4 +1,3 @@
-// Footer.tsx – Neon-Glass Footer with Deep Slate Theme
 import {
   FaGithub,
   FaLinkedin,
@@ -35,14 +34,10 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h4 className="text-white text-xl font-semibold mb-4">📬 Connect</h4>
-
           <div className="space-y-3 text-sm text-slate-400">
             <p className="flex items-center gap-2">
               <FaEnvelope className="text-white" />
-              <a
-                href="mailto:ck7464877@gmail.com"
-                className="hover:text-white transition"
-              >
+              <a href="mailto:ck7464877@gmail.com" className="hover:text-white transition">
                 ck7464877@gmail.com
               </a>
             </p>
@@ -66,14 +61,30 @@ const Footer = () => {
               </a>
             </p>
 
+            {/* Social Icons */}
             <div className="flex gap-4 text-xl pt-3">
-              <a href="https://github.com/chandan-911" target="_blank" rel="noreferrer" className="hover:text-white transition hover:scale-125 duration-300">
+              <a
+                href="https://github.com/chandan-911"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition hover:scale-125 duration-300"
+              >
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/in/chandan-m911/" target="_blank" rel="noreferrer" className="hover:text-white transition hover:scale-125 duration-300">
+              <a
+                href="https://www.linkedin.com/in/chandan-m911/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition hover:scale-125 duration-300"
+              >
                 <FaLinkedin />
               </a>
-              <a href="https://www.instagram.com/maurya_.911/" target="_blank" rel="noreferrer" className="hover:text-white transition hover:scale-125 duration-300">
+              <a
+                href="https://www.instagram.com/maurya_.911/"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white transition hover:scale-125 duration-300"
+              >
                 <FaInstagram />
               </a>
             </div>
@@ -81,7 +92,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Footer Bottom Bar */}
       <div className="mt-10 border-t border-white/10 pt-4 px-4 sm:px-6 text-xs flex flex-col sm:flex-row items-center justify-between text-slate-500">
         <div>© 2025 Chandan. All rights reserved.</div>
         <div className="mt-2 sm:mt-0">
