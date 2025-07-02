@@ -5,6 +5,7 @@ import Projects from './pages/Projects';
 import Education from './pages/Education';
 import Coding from './pages/Coding';
 import Github from './pages/Github';
+import Resume from './pages/Resume'; // ✅ New resume route
 import Navbar from './components/Navbar';
 import Footer from './components/footer'; // ✅ Capitalized for consistency
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/coding" element={<Coding />} />
           <Route path="/github" element={<Github />} />
+          <Route path="/resume" element={<Resume />} />   {/* ✅ Resume page */}
         </Routes>
       </main>
 

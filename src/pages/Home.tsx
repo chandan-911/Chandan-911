@@ -1,4 +1,5 @@
-import { FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaDownload, FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -8,8 +9,8 @@ const Home = () => {
       aria-labelledby="home-heading"
     >
       {/* Glowing Background Gradient Overlays */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 transition duration-1000 animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-sky-700 to-transparent rounded-full blur-3xl opacity-20 transition duration-1000 animate-ping"></div>
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-sky-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
 
       <div className="relative z-10 text-center max-w-4xl">
         <h1
@@ -44,6 +45,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-neutral-900 hover:bg-neutral-800 rounded-full flex items-center gap-2 text-sm border border-white/10 shadow hover:shadow-blue-400 transition"
+            title="Visit GitHub"
           >
             <FaGithub /> GitHub
           </a>
@@ -52,24 +54,17 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2 bg-blue-600 hover:bg-blue-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-blue-400 transition"
+            title="Visit LinkedIn"
           >
             <FaLinkedin /> LinkedIn
           </a>
-          <a
-            href="/Chandan-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/resume"
             className="px-5 py-2 bg-emerald-600 hover:bg-emerald-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-emerald-400 transition"
+            title="View Resume"
           >
-            <FaDownload /> View Resume
-          </a>
-          <a
-            href="/Chandan-Resume.pdf"
-            download
-            className="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-indigo-400 transition"
-          >
-            <FaDownload /> Download
-          </a>
+            <FaEye /> View Resume
+          </Link>
         </div>
       </div>
     </section>
