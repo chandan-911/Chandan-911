@@ -2,7 +2,7 @@
 <h3 align="center">AI/ML Enthusiast | Web Developer | Social Impact Creator | Open Source Contributor</h3>
 
 <p align="center">
-  <a href="https://chandan-911.github.io/Chandan/" target="_blank">
+  <a href="https://chandan-911.vercel.app" target="_blank">
     <img src="https://img.shields.io/badge/Portfolio-%23000000?style=for-the-badge&logo=github&logoColor=white" alt="Portfolio" />
   </a>
   <a href="https://linkedin.com/in/chandan-m911/" target="_blank">
