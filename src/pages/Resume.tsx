@@ -1,8 +1,14 @@
-// Resume.tsx – Clean PDF Viewer Page with Download & View Options
+// Resume.tsx
 import { FaDownload, FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import '@react-pdf-viewer/core/lib/styles/index.css';
+import '@react-pdf-viewer/default-layout/lib/styles/index.css';
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 
 const Resume = () => {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+
   return (
     <section className="min-h-screen bg-[#0d0d0d] text-white px-4 py-24 relative overflow-hidden">
       {/* Gradient Background Effects */}
@@ -14,29 +20,17 @@ const Resume = () => {
           📄 My Resume
         </h1>
         <p className="text-gray-300 mb-8 text-base sm:text-lg max-w-2xl mx-auto">
-          Below is a view of my professional resume. You can download it directly or reach out if you’d like a custom version for a specific opportunity.
+          Below is a view of my professional resume. You can also download it directly.
         </p>
 
         {/* PDF Viewer */}
-        <div className="w-full h-[75vh] bg-[#121212] border border-white/10 rounded-xl overflow-hidden shadow-lg mb-6">
-          <iframe
-            src="/Chandan-Resume.pdf"
-            title="Chandan Resume PDF"
-            className="w-full h-full"
-            frameBorder="0"
-          >
-            <p className="text-gray-400 p-4">
-              Your browser does not support PDF viewing. Please{' '}
-              <a
-                href="/Chandan-Resume.pdf"
-                download
-                className="text-blue-400 underline"
-              >
-                download the resume
-              </a>{' '}
-              instead.
-            </p>
-          </iframe>
+        <div className="w-full h-[75vh] border border-white/10 rounded-xl shadow-lg bg-white overflow-hidden mb-6">
+          <Worker workerUrl={`https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js`}>
+            <Viewer
+              fileUrl="/Chandan-Resume.pdf"
+              plugins={[defaultLayoutPluginInstance]}
+            />
+          </Worker>
         </div>
 
         {/* Action Buttons */}
