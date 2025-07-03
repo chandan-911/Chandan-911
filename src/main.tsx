@@ -3,15 +3,15 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import 'aos/dist/aos.css'; // for animations
 
-// ✅ Register service worker for PWA (only if vite-plugin-pwa is correctly configured)
+// ✅ Register service worker for PWA
 import { registerSW } from 'virtual:pwa-register';
 
-// ✅ Setup SW update handler
 const updateSW = registerSW({
   onNeedRefresh() {
-    if (confirm('🆕 New content is available. Do you want to refresh?')) {
-      updateSW(true); // triggers update
+    if (confirm('🔄 New update available. Refresh now?')) {
+      updateSW(true);
     }
   },
   onOfflineReady() {
@@ -19,12 +19,8 @@ const updateSW = registerSW({
   },
 });
 
-// ✅ Find root container & render
 const container = document.getElementById('root');
-
-if (!container) {
-  throw new Error('❌ Root container not found');
-}
+if (!container) throw new Error('❌ Root container not found');
 
 createRoot(container).render(
   <StrictMode>

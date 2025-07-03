@@ -3,10 +3,14 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
+  base: '/', // 🔁 Set to '/' for root or '/your-repo/' for GitHub Pages
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true, // ✅ allows testing PWA in dev
+      },
       manifest: {
         name: 'Chandan Portfolio',
         short_name: 'Portfolio',

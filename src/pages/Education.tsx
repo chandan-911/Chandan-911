@@ -1,85 +1,65 @@
-import { FaGraduationCap, FaStar } from 'react-icons/fa';
-
+// src/pages/Education.tsx
 const Education = () => {
-  const educationData = [
+  const education = [
     {
-      level: 'Graduation',
-      institution: 'Guru Nanak Dev Engineering College, Ludhiana',
-      period: '2022 – 2026',
       degree: 'B.Tech in Computer Science and Engineering',
-      details: [
-        'Current CGPA: 7.32',
-        'Relevant Courses: DSA, Operating Systems, AI, Web Development',
-      ],
+      institution: 'Guru Nanak Dev Engineering College, Ludhiana',
+      duration: '2022 – 2026',
+      score: 'CGPA: 7.32',
+      desc: 'Actively involved in AI/ML, web development, and social impact projects like Trakki and SIH.',
     },
     {
-      level: 'Senior Secondary (12th)',
+      degree: 'Higher Secondary (12th – Non-Medical)',
       institution: 'Guru Nanak Public Senior Secondary School, Amritsar',
-      period: '2020 – 2022',
-      degree: 'PSEB – Non-Medical Stream',
-      details: [
-        'Score: 94%',
-        'Subjects: Physics, Chemistry, Math, Computer Science',
-      ],
+      duration: '2020 – 2022',
+      score: '94%',
+      desc: 'Excelled in Mathematics, Physics, and Computer Science. Participated in school-level tech events.',
     },
     {
-      level: 'Matriculation (10th)',
+      degree: 'Matriculation (10th)',
       institution: 'Guru Nanak Public Senior Secondary School, Amritsar',
-      period: '2019 – 2020',
-      degree: 'PSEB Board',
-      details: ['Score: 96%', 'Passed with All Core Subjects'],
+      duration: '2019 – 2020',
+      score: '96%',
+      desc: 'Completed all core subjects like Computer, Science, SST, and language subjects.',
     },
   ];
 
   return (
     <section
       id="education"
-      className="min-h-screen bg-[#0d0d0d] text-white px-4 sm:px-6 py-28 relative overflow-hidden"
+      className="min-h-screen bg-[#0d0d0d] text-white px-4 sm:px-6 py-28 relative"
       aria-labelledby="education-heading"
     >
-      {/* Glowing Backgrounds */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-sky-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
+      {/* Glowing Background Lights */}
+      <div className="absolute -top-32 -left-32 w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-br from-green-800 to-transparent rounded-full blur-3xl opacity-25 animate-pulse" />
+      <div className="absolute -bottom-32 -right-32 w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-teal-700 to-transparent rounded-full blur-3xl opacity-15 animate-pulse" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
+      <div className="relative z-10 max-w-4xl mx-auto">
         <h2
           id="education-heading"
-          className="text-4xl sm:text-5xl font-bold mb-12 text-center text-blue-400 drop-shadow"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-emerald-400 mb-12 drop-shadow"
+          data-aos="fade-down"
         >
-          🎓 My Academic Journey
+          🎓 Education
         </h2>
 
-        <div className="space-y-10">
-          {educationData.map((edu, index) => (
-            <article
+        <div className="space-y-8">
+          {education.map((edu, index) => (
+            <div
               key={index}
-              className="bg-gradient-to-r from-[#1a1a1a]/70 to-[#0d0d0d]/60 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-blue-600/20 transition-all"
+              className="bg-[#1a1a1a]/60 border border-white/10 rounded-xl p-5 sm:p-6 shadow-md hover:shadow-emerald-400/30 transition-all hover:scale-[1.015]"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
-              <header className="mb-1">
-                <h3 className="text-2xl font-semibold text-blue-300 flex items-center gap-2">
-                  <FaGraduationCap className="text-white" />
-                  {edu.level}
-                </h3>
-                <p className="text-lg font-medium text-white">
-                  {edu.institution}
-                </p>
-                <p className="text-sm text-gray-400 italic">{edu.period}</p>
-              </header>
-
-              <p className="text-gray-300 mt-2 mb-3">{edu.degree}</p>
-
-              <ul className="list-disc list-inside space-y-1">
-                {edu.details.map((point, idx) => (
-                  <li
-                    key={idx}
-                    className="text-gray-400 text-sm flex items-center gap-2"
-                  >
-                    <FaStar className="text-yellow-400" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
-            </article>
+              <h3 className="text-lg sm:text-xl font-semibold text-teal-300">
+                {edu.degree}
+              </h3>
+              <p className="text-sm text-gray-400 mt-1">{edu.institution}</p>
+              <p className="text-sm text-gray-400">
+                🗓️ {edu.duration} | 📊 {edu.score}
+              </p>
+              <p className="mt-2 text-gray-300 text-sm">{edu.desc}</p>
+            </div>
           ))}
         </div>
       </div>

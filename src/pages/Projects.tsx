@@ -1,3 +1,4 @@
+// src/pages/Projects.tsx
 const Projects = () => {
   const projects = [
     {
@@ -47,13 +48,14 @@ const Projects = () => {
       aria-labelledby="projects-heading"
     >
       {/* Decorative Background */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-tr from-purple-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-gradient-to-tr from-purple-700 to-transparent rounded-full blur-3xl opacity-20 animate-pulse" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <h2
           id="projects-heading"
           className="text-4xl sm:text-5xl font-bold text-center text-purple-400 drop-shadow mb-12"
+          data-aos="fade-down"
         >
           🚀 My Projects
         </h2>
@@ -62,7 +64,9 @@ const Projects = () => {
           {projects.map((proj, index) => (
             <article
               key={index}
-              className="bg-gradient-to-br from-[#1f1f1f]/70 to-[#111]/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-purple-500/30 transition-all"
+              className="bg-gradient-to-br from-[#1f1f1f]/70 to-[#111]/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-md hover:shadow-purple-500/30 transition-all hover:scale-[1.02]"
+              data-aos="zoom-in-up"
+              data-aos-delay={index * 100}
             >
               <header>
                 <h3 className="text-xl font-semibold mb-2 text-blue-400">
@@ -75,7 +79,7 @@ const Projects = () => {
                 {proj.tech.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-xs bg-[#121212] text-slate-300 border border-gray-700 rounded-full"
+                    className="px-3 py-1 text-xs bg-[#121212] text-slate-300 border border-gray-700 rounded-full hover:bg-[#1e1e1e] transition"
                   >
                     {tech}
                   </span>
@@ -88,7 +92,7 @@ const Projects = () => {
                     href={proj.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:underline"
+                    className="text-blue-400 hover:underline hover:text-blue-300 transition"
                   >
                     🌐 Live Demo
                   </a>
@@ -98,7 +102,7 @@ const Projects = () => {
                     href={proj.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-400 hover:underline"
+                    className="text-green-400 hover:underline hover:text-green-300 transition"
                   >
                     📂 GitHub
                   </a>
