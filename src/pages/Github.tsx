@@ -52,19 +52,28 @@ const Github = () => {
       className="min-h-screen bg-[#0d0d0d] text-white px-4 sm:px-6 py-28 relative overflow-hidden"
     >
       {/* Glows */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-pink-700 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-600 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
       <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-cyan-700 to-transparent rounded-full blur-3xl opacity-20 animate-pulse" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12 text-blue-400 drop-shadow">
-          🐙 GitHub Repositories
+          🐙 GitHub Analytics
         </h2>
 
-        {/* GitHub Stats Card */}
-        <div className="mb-12 flex justify-center">
+        {/* streak card  */}
+        <div className="mb-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
           <img
-            src="https://github-readme-stats.vercel.app/api?username=chandan-911&show_icons=true&theme=radical&hide_border=true&border_radius=12"
-            alt="GitHub Stats"
+            src="https://github-readme-streak-stats.herokuapp.com?user=chandan-911&theme=radical&hide_border=true"
+            alt="GitHub Streak"
+            className="rounded-lg w-full max-w-2xl shadow-lg"
+          />
+        </div>
+
+        {/* Top Languages */}
+        <div className="mb-12 flex justify-center" data-aos="fade-up" data-aos-delay="200">
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=chandan-911&layout=compact&theme=radical&hide_border=true&langs_count=8"
+            alt="Top Languages"
             className="rounded-lg w-full max-w-2xl shadow-lg"
           />
         </div>
@@ -73,11 +82,10 @@ const Github = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           <button
             onClick={() => setActiveTopic(null)}
-            className={`px-4 py-2 text-sm rounded-full transition ${
-              activeTopic === null
-                ? 'bg-green-600 text-white'
-                : 'bg-white/10 text-gray-300 hover:bg-white/20'
-            }`}
+            className={`px-4 py-2 text-sm rounded-full transition ${activeTopic === null
+              ? 'bg-green-600 text-white'
+              : 'bg-white/10 text-gray-300 hover:bg-white/20'
+              }`}
           >
             Show All
           </button>
@@ -85,11 +93,10 @@ const Github = () => {
             <button
               key={topic}
               onClick={() => setActiveTopic(topic)}
-              className={`px-4 py-2 text-sm rounded-full transition ${
-                activeTopic === topic
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white/10 text-gray-300 hover:bg-white/20'
-              }`}
+              className={`px-4 py-2 text-sm rounded-full transition ${activeTopic === topic
+                ? 'bg-green-600 text-white'
+                : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                }`}
             >
               {topic}
             </button>
