@@ -1,4 +1,3 @@
-// src/pages/Resume.tsx
 import { FaDownload, FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -14,7 +13,7 @@ const Resume = () => {
     <section className="min-h-screen bg-[#0d0d0d] text-white px-4 py-24 relative overflow-hidden">
       {/* Glowing Gradient Effects */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-purple-700 to-transparent rounded-full blur-3xl opacity-30 animate-pulse" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-teal-600 to-transparent rounded-full blur-3xl opacity-20 animate-ping" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-teal-600 to-transparent rounded-full blur-3xl opacity-20 animate-pulse" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.h1
@@ -46,7 +45,7 @@ const Resume = () => {
           className="w-full h-[75vh] border border-white/10 rounded-xl shadow-lg bg-white overflow-hidden mb-6"
         >
           <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
-            <Viewer fileUrl="/Chandan-Resume.pdf" plugins={[defaultLayoutPluginInstance]} />
+            <Viewer fileUrl={`${import.meta.env.BASE_URL}Chandan-Resume.pdf`} plugins={[defaultLayoutPluginInstance]} />
           </Worker>
         </motion.div>
 
@@ -66,7 +65,7 @@ const Resume = () => {
           </Link>
 
           <a
-            href="/Chandan-Resume.pdf"
+            href={`${import.meta.env.BASE_URL}Chandan-Resume.pdf`}
             download
             className="px-5 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center gap-2 text-sm shadow hover:shadow-indigo-400 transition"
           >
