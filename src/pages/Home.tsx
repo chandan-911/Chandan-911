@@ -9,9 +9,9 @@ const Home = () => {
       className="min-h-screen bg-[#0d0d0d] text-white px-4 sm:px-6 py-24 relative overflow-hidden flex flex-col items-center justify-center"
       aria-labelledby="home-heading"
     >
-      {/* Glowing Background Gradient Overlays */}
+      {/* Background Effects */}
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-indigo-800 to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-sky-700 to-transparent rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-tr from-sky-700 to-transparent rounded-full blur-3xl opacity-20 animate-ping"></div>
 
       <div className="relative z-10 text-center max-w-4xl" data-aos="fade-up">
         <h1
@@ -20,13 +20,12 @@ const Home = () => {
         >
           Hi, I'm <span className="text-blue-400">Chandan</span>
         </h1>
+
         <p className="text-base sm:text-lg text-gray-300 mb-6">
-          B.Tech CSE student @ GNDEC Ludhiana | Passionate about AI, Web Dev, ML, and real-world
-          impact. Social impact project contributor. Tech explorer. Hackathon finalist. Always
-          learning.
+          Final-year CSE student at GNDEC, Ludhiana | Full-stack web developer | AI & ML enthusiast | Hackathon Finalist | Community Volunteer | Passionate about real-world impact
         </p>
 
-        {/* Academic Highlight Card */}
+        {/* Highlights */}
         <div
           className="bg-[#1c1c1c]/60 border border-white/10 backdrop-blur-md rounded-xl shadow-inner px-6 py-4 text-left max-w-xl mx-auto mb-10 transition-transform hover:scale-[1.015]"
           data-aos="fade-up"
@@ -38,10 +37,18 @@ const Home = () => {
           <p className="text-gray-300 mb-2">
             📊 <span className="text-white font-semibold">CGPA:</span> 7.32
           </p>
+          <p className="text-gray-300 mb-1">
+            💼 <span className="text-white font-semibold">Internships:</span> IDS (ML), Elevate Labs, GDSC – Gen AI (Google Cloud)
+          </p>
           <p className="text-gray-300">
-            🚀 <span className="text-white font-semibold">Projects:</span> Trakki | ML Internship @ IDS | Virtual Herbal Garden | GDSC AI Contributions 
+            🚀 <span className="text-white font-semibold">Projects:</span> Trakki (Hackathon), Virtual Herbal Garden (SIH), ML Regression Suite, GDSC AI tools
           </p>
         </div>
+
+        {/* New Personal Message */}
+        <p className="text-sm text-slate-400 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+          “Driven by curiosity, I thrive on building intelligent and accessible applications that create meaningful change in society. Let’s build something impactful together.”
+        </p>
 
         {/* Action Buttons */}
         <div className="flex flex-wrap justify-center gap-4" data-aos="zoom-in" data-aos-delay="200">
